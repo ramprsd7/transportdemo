@@ -1,0 +1,32 @@
+img{ 
+    margin-left:40%;
+    height:70%;
+    width:55%;
+    margin-top:1%;
+    border-radius: 15px;
+}
+.card{
+    width:30%;
+    height:60%;
+    /* border:1px solid rgb(243, 240, 240); */
+    border:solid black transparent;
+    margin-left:5%;
+    background:transparent;
+    border-radius: 30px;
+    margin-top:-30%;
+    /* background-image: url("../../../assets/images/bus.jfif"); */
+}
+.card-body{
+    margin-left:20%;
+    margin-top:15%;
+}
+#btn{
+    margin-left:18%;
+    margin-top:10%;
+    border-radius:5px;
+}
+mat-icon{
+    margin-left:-20px;
+    font-size: 15px;
+}
+

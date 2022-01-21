@@ -1,0 +1,38 @@
+<img src="../../assets/images/Travel.jpg" class="img1">  
+<div class="card">
+    <div class="card-body">      
+        <form [formGroup]="tripForm" (ngSubmit)="onSubmit()">
+            <div class="row">
+                <div class="col-12">
+                    <div class="form-group">
+                        <mat-form-field appearance="fill">
+                            <mat-label>Start Point</mat-label>
+                            <input type="text" class="start" matInput [formControlName]="startPoint" (focus)="setGoogleAutoComplete($event)" autofocus ngModel required />
+                            <mat-icon matSuffix>location_on</mat-icon>
+                        </mat-form-field>
+                    </div>
+                </div>
+                
+
+                <div class="col-12">
+                    <div class="form-group">
+                        <mat-form-field appearance="fill">
+                            <mat-label>End Point</mat-label>
+                            <input type="text" class="end" matInput [formControlName]="endPoint" (focus)="setGoogleAutoComplete($event)" autofocus ngModel required />
+                            <mat-icon matSuffix>location_on</mat-icon>
+                        </mat-form-field>
+                    </div>
+                </div>  
+            </div> 
+
+            
+                    <div class="form-group">
+                        <button mat-raised-button color="primary" id="btn">Submit</button>
+                    </div>     
+
+        <router-outlet></router-outlet>
+        </form>
+    </div>
+</div>    
+        
+      
