@@ -1,38 +1,46 @@
-<img src="../../assets/images/Travel.jpg" class="img1">  
+<img src="../../assets/images/Travel.jpg" class="img1">
 <div class="card">
-    <div class="card-body">      
-        <form [formGroup]="tripForm" (ngSubmit)="onSubmit()">
+    <div class="card-body">
+        <form [formGroup]="tripForm">
             <div class="row">
                 <div class="col-12">
                     <div class="form-group">
                         <mat-form-field appearance="fill">
                             <mat-label>Start Point</mat-label>
-                            <input type="text" class="start" matInput [formControlName]="startPoint" (focus)="setGoogleAutoComplete($event)" autofocus ngModel required />
-                            <mat-icon matSuffix>location_on</mat-icon>
+                            <input type="text" class="start" matInput formControlName="startpoint"
+                                (focus)="setStartGoogleAutoComplete($event)" autofocus required />
+                            <mat-icon matSuffix>near_me</mat-icon>
                         </mat-form-field>
                     </div>
                 </div>
-                
+
+                <mat-icon class="swap-src" (click)="swapsource()">swap_vertical_circle</mat-icon>
 
                 <div class="col-12">
                     <div class="form-group">
                         <mat-form-field appearance="fill">
                             <mat-label>End Point</mat-label>
-                            <input type="text" class="end" matInput [formControlName]="endPoint" (focus)="setGoogleAutoComplete($event)" autofocus ngModel required />
+                            <input type="text" class="end" matInput formControlName="endpoint"
+                                (focus)="setEndGoogleAutoComplete($event)" autofocus required />
                             <mat-icon matSuffix>location_on</mat-icon>
                         </mat-form-field>
                     </div>
-                </div>  
-            </div> 
+                </div>
+            </div>
 
+            <div class="btn-group">
+                <button mat-raised-button color="primary" id="btn" (click)="submit()">Submit</button>
+                <button mat-raised-button type="reset" color="warn" id="btn">Reset</button>
+            </div>
+            <br/>
+            <br/>
+
+            {{ this.tripForm.value | json}}
             
-                    <div class="form-group">
-                        <button mat-raised-button color="primary" id="btn">Submit</button>
-                    </div>     
+            <br/>
 
-        <router-outlet></router-outlet>
+            {{ this.tripArray | json}}
+            <router-outlet></router-outlet>
         </form>
     </div>
-</div>    
-        
-      
+</div>
