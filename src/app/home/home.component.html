@@ -1,46 +1,82 @@
-<img src="../../assets/images/Travel.jpg" class="img1">
-<div class="card">
-    <div class="card-body">
-        <form [formGroup]="tripForm">
-            <div class="row">
-                <div class="col-12">
-                    <div class="form-group">
-                        <mat-form-field appearance="fill">
-                            <mat-label>Start Point</mat-label>
-                            <input type="text" class="start" matInput formControlName="startpoint"
-                                (focus)="setStartGoogleAutoComplete($event)" autofocus required />
-                            <mat-icon matSuffix>near_me</mat-icon>
-                        </mat-form-field>
+<div class="main">
+    <div class="card">
+        <div class="card-body">
+            <form [formGroup]="tripForm">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="form-group">
+                            <mat-form-field appearance="fill">
+                                <mat-label>Start Point</mat-label>
+                                <input type="text" class="start" matInput formControlName="startpoint"
+                                    (focus)="setStartGoogleAutoComplete($event)" autofocus required />
+                                <mat-icon matSuffix>near_me</mat-icon>
+                            </mat-form-field>
+                        </div>
+                    </div>
+
+                    <mat-icon class="swap-src" (click)="swapsource()">swap_vertical_circle</mat-icon>
+
+                    <div class="col-12">
+                        <div class="form-group">
+                            <mat-form-field appearance="fill">
+                                <mat-label>End Point</mat-label>
+                                <input type="text" class="end" matInput formControlName="endpoint"
+                                    (focus)="setEndGoogleAutoComplete($event)" autofocus required />
+                                <mat-icon matSuffix>location_on</mat-icon>
+                            </mat-form-field>
+                        </div>
                     </div>
                 </div>
 
-                <mat-icon class="swap-src" (click)="swapsource()">swap_vertical_circle</mat-icon>
-
-                <div class="col-12">
-                    <div class="form-group">
-                        <mat-form-field appearance="fill">
-                            <mat-label>End Point</mat-label>
-                            <input type="text" class="end" matInput formControlName="endpoint"
-                                (focus)="setEndGoogleAutoComplete($event)" autofocus required />
-                            <mat-icon matSuffix>location_on</mat-icon>
-                        </mat-form-field>
-                    </div>
+                <div class="btn-group">
+                    <button mat-raised-button color="primary" id="btn" (click)="submit()">Submit</button>
+                    <button mat-raised-button type="reset" color="warn" (click)="reset()" id="btn">Reset</button>
                 </div>
-            </div>
+                <br />
+                <br />
 
-            <div class="btn-group">
-                <button mat-raised-button color="primary" id="btn" (click)="submit()">Submit</button>
-                <button mat-raised-button type="reset" color="warn" id="btn">Reset</button>
-            </div>
-            <br/>
-            <br/>
+                {{ this.tripForm.value | json}}
 
-            {{ this.tripForm.value | json}}
-            
-            <br/>
+                <br />
 
-            {{ this.tripArray | json}}
-            <router-outlet></router-outlet>
-        </form>
+                {{ this.tripArray | json}}
+                <router-outlet></router-outlet>
+            </form>
+        </div>
+
+
     </div>
+
+    <div class="image">
+        <img src="../../assets/images/Travel.jpg" class="img1">
+
+    </div>
+</div>
+
+<div class="design" id="design">
+    <i class="fas fa-circle" id="circle" *ngIf="tripArray.length > 0"></i>
+    <div class="line-5" id="line" *ngIf="tripArray.length> 0"></div>
+
+    <i class="fas fa-circle" id="circle" *ngIf="tripArray.length > 1"></i>
+    <div class="line-5" id="line" *ngIf="tripArray.length > 1 "></div>
+
+    <i class="fas fa-circle" id="circle" *ngIf="tripArray.length > 2"></i>
+    <div class="line-5" id="line" *ngIf="tripArray.length > 2"></div>
+
+    <i class="fas fa-circle" id="circle" *ngIf="tripArray.length > 3"></i>
+    <div class="line-5" id="line" *ngIf="tripArray.length > 3"></div>
+
+    <i class="fas fa-circle" id="circle" *ngIf="tripArray.length > 4"></i>
+    <div class="line-5" id="line" *ngIf="tripArray.length > 4"></div>
+
+    <i class="fas fa-circle" id="circle" *ngIf="tripArray.length > 5"></i>
+    <div class="line-5" id="line" *ngIf="tripArray.length > 5"></div>
+    <br>
+
+    <div class="trip-txt">
+        <div class="txt-ds" *ngFor="let data of tripArray">
+            {{data}}
+        </div>
+    </div>
+
 </div>

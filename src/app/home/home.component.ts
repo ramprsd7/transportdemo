@@ -43,14 +43,39 @@ export class HomeComponent implements OnInit {
     return this.tripForm.get('endPoint');
   }
 
+  reset(){
+    this.tripArray= [];
+  }
+  
   submit() {
     if (this.tripForm.invalid) {
       alert('Form is invalid kindly input details required')
     } else {
       let trip = this.tripForm.value;
-
       this.tripArray.push(trip.startpoint + ' - ' + trip.endpoint);
 
+      let designDiv = document.getElementById('design');
+      let circleDiv = document.getElementById('circle');
+      let lineDiv = document.getElementById('line');
+      // circleDiv.innerHTML = "circleDiv";
+      // lineDiv.innerHTML = "lineDiv";
+
+      if (this.tripArray[this.tripArray.length - 1] == this.tripArray[this.tripArray.length - 2]) {
+        console.log('same pickup & drop')
+      } else {
+        console.log('Continued Trip')
+        // designDiv.append(circleDiv);
+        // designDiv.append(lineDiv);
+      }
+
+      for (let i = 0; i < this.tripArray.length; i++) {
+        this.tripArray.forEach((elem) => {
+
+          if (this.tripArray[i] != this.tripArray[i + 1]) {
+
+          }
+        })
+      }
       console.log(this.tripForm.value);
       console.log(this.tripArray);
     }

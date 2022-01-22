@@ -1,21 +1,21 @@
-img {
-    margin-left  : 40%;
-    height       : 70%;
-    width        : 55%;
-    margin-top   : 1%;
+.img1 {
+    height: 70%;
+    width: 80%;
+    margin-top: 8%;
     border-radius: 15px;
+}
+
+.main{
+    display: flex;
 }
 
 .card {
     width              : 30%;
-    height             : 60%;
     /* border          :1px solid rgb(243, 240, 240); */
     border             : solid black transparent;
-    margin-left        : 5%;
+    margin             : 5%;
     background         : transparent;
     border-radius      : 30px;
-    margin-top         : -30%;
-    /* background-image: url("../../../assets/images/bus.jfif"); */
 }
 
 .card-body {
@@ -42,6 +42,32 @@ mat-icon {
 }
 
 .btn-group {
-    display: block;
+    display    : block;
     margin-left: -96px;
+}
+
+.design {
+    display: flex;
+    margin-left: 100px;
+}
+
+.line-5 {
+    height    : 4px;
+    width     : 150px;
+    margin-top: 4px;
+    background: linear-gradient(to bottom,
+            transparent 2px,
+            black 2px,
+            black 3px,
+            transparent 3px);
+}
+
+.trip-txt {
+    display: flex;
+    position: absolute;
+    margin: 15px 0px 0px -20px;
+}
+
+.txt-ds {
+    padding-right: 105px;
 }
